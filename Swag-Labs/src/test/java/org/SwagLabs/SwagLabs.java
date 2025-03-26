@@ -20,8 +20,25 @@ public class SwagLabs {
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		driver.findElement(By.id("login-button")).click();
 		String text = driver.findElement(By.xpath("//div[@class='product_label']")).getText();
-		System.out.println("Applicatio move this page -> "+text);
-		driver.quit();
+		System.out.println("Application move this page -> "+text);
+		
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//ProductPage
+		driver.findElement(By.xpath("(//button[text()='ADD TO CART'])[1]")).click();
+		driver.findElement(By.xpath("(//button[text()='ADD TO CART'])[5]")).click();
+		
+		driver.findElement(By.xpath("//*[@data-icon='shopping-cart']")).click();
+		String text2 = driver.findElement(By.xpath("//div[@class='subheader']")).getText();
+		System.out.println("Application move this Page ->"+text2);
+		
+	
 	}
 
 }
