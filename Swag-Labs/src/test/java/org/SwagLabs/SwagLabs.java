@@ -36,7 +36,19 @@ public class SwagLabs {
 		
 		driver.findElement(By.xpath("//*[@data-icon='shopping-cart']")).click();
 		String text2 = driver.findElement(By.xpath("//div[@class='subheader']")).getText();
-		System.out.println("Application move this Page ->"+text2);
+		System.out.println("Application move this Page -> "+text2);
+		
+		//YouCart
+		driver.findElement(By.xpath("(//button[text()='REMOVE'])[2]")).click();
+		driver.findElement(By.xpath("//a[text()='CHECKOUT']")).click();
+		
+		String text3 = driver.findElement(By.xpath("//div[@class='subheader']")).getText();
+		System.out.println("Application move to this Page -> "+text3);
+		
+		
+		
+		
+				
 		
 	
 	}
