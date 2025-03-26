@@ -23,13 +23,6 @@ public class SwagLabs {
 		System.out.println("Application move this page -> "+text);
 		
 		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		//ProductPage
 		driver.findElement(By.xpath("(//button[text()='ADD TO CART'])[1]")).click();
 		driver.findElement(By.xpath("(//button[text()='ADD TO CART'])[5]")).click();
@@ -38,14 +31,31 @@ public class SwagLabs {
 		String text2 = driver.findElement(By.xpath("//div[@class='subheader']")).getText();
 		System.out.println("Application move this Page -> "+text2);
 		
-		//YouCart
+		
+		//YouCartPage
 		driver.findElement(By.xpath("(//button[text()='REMOVE'])[2]")).click();
 		driver.findElement(By.xpath("//a[text()='CHECKOUT']")).click();
 		
 		String text3 = driver.findElement(By.xpath("//div[@class='subheader']")).getText();
 		System.out.println("Application move to this Page -> "+text3);
 		
+		//InformationPage
+		driver.findElement(By.id("first-name")).sendKeys("Abcdefghi");
+		driver.findElement(By.id("last-name")).sendKeys("123456");
+		driver.findElement(By.id("postal-code")).sendKeys("600081");
+		driver.findElement(By.xpath("//input[@value='CONTINUE']")).click();
 		
+		String text4 = driver.findElement(By.xpath("//div[@class='subheader']")).getText();
+		System.out.println("Application move to this Page -> "+text4);
+
+		
+		//OverViewPage
+		driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).click();
+		driver.findElement(By.xpath("//button[text()='<- Back']")).click();
+		driver.findElement(By.xpath("//a[text()='FINISH']")).click();
+		
+		String text5 = driver.findElement(By.xpath("//h2[@class='complete-header']")).getText();
+		System.out.println("Application successfully move to this page -> "+text5);
 		
 		
 				
